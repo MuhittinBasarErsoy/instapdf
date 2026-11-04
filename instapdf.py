@@ -20,6 +20,7 @@ import instaloader
 from PIL import Image
 
 OUT_DIR = Path(__file__).parent / "pdfs"
+A4_LAYOUT = img2pdf.get_layout_fun((img2pdf.mm_to_pt(210), img2pdf.mm_to_pt(297)))
 
 
 class InstaPdfError(Exception):
@@ -84,7 +85,7 @@ def make_pdf(url: str, output: str | None = None, login: str | None = None, prog
 
     out = Path(output) if output else OUT_DIR / f"{post.owner_username}_{shortcode}.pdf"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_bytes(img2pdf.convert(pages))
+    out.write_bytes(img2pdf.convert(pages, layout_fun=A4_LAYOUT))
     progress(f"PDF hazır ({len(pages)} sayfa): {out.resolve()}")
     return out.resolve()
 

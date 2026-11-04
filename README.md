@@ -1,6 +1,6 @@
 # InstaPDF
 
-Instagram'daki çok görselli (carousel) postları tek bir PDF'e çevirir — her görsel bir sayfa, tam çözünürlükte. Ders notu paylaşılan postları kaydetmek için yapıldı.
+Instagram'daki çok görselli (carousel) postları tek bir PDF'e çevirir — her görsel bir A4 sayfa, tam çözünürlükte (görsel kırpılmadan sayfaya ortalanır). Ders notu paylaşılan postları kaydetmek için yapıldı.
 
 ## Kurulum
 
